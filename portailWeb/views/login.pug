@@ -6,10 +6,12 @@ block append body
         .jumbotron
             form.form-horizontal(action="/users/login", method="post")
                 div
-                    label= "Username:"
+                    label= "Identifiant:"
                     input(type="text", name="username")
                 div
-                    label= "Password:"
+                    label= "Mot de Passe:"
                     input(type="password", name="password")
                 div
-                    input(type="submit", value="Log In")
+                    input(type="submit", value="Se connecter")
+
+

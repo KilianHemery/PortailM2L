@@ -20,32 +20,28 @@ block body
             #navbar.navbar-collapse.collapse
                 ul.nav.navbar-nav
                     li.active
-                        a(href='/') Home
+                        a(href='/') Accueil
                     li
-                        a(href='#about') Menu 1
+                        a(href='#about') A propos
                     li
-                        a(href='#contact') Menu 2
+                        a(href='#contact') Contact
                     li.dropdown
                         a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-                            | Menu 3 
+                            | Informations
                             span.caret
                         ul.dropdown-menu(role='menu')
                             li
-                                a(href='#') Action 1
+                                a(href='/description') Description du site
                             li
-                                a(href='#') Action 2 
+                                a(href='/equipement') Equipement en matériel informatique des espaces
                             li
-                                a(href='#') Action 3 
-                            li.divider
-                            li.dropdown-header Nav header
+                                a(href='/services') Services proposés
                             li
-                                a(href='#') Action 4
-                            li
-                                a(href='#') Action 5
+                                a(href='/reseaux') Réseaux informatiques
                                 
                 ul.nav.navbar-nav.navbar-right
                     li
                         if (!user)
-                            a(href="/users/login") Login
+                            a(href="/users/login") Se connecter
                         else
-                            a(href="/users/logout") Logout
+                            a(href="/users/logout") Se déconnecter
