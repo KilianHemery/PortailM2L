@@ -10,4 +10,20 @@ router.get('/',
     }
 );
 
+router.get('/propos',
+    function(req, res) {
+        console.log(req.session);
+
+        res.render('propos', { title: 'L\'annuaire des ligues' });
+    }
+);
+
+router.get('/equipement',
+    function(req, res) {
+        console.log(req.session);
+
+        res.render('equipement', { title: 'Équipement en matériel informatique des espaces' });
+    }
+);
+
 module.exports = router;
