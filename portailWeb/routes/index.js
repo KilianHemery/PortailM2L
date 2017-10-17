@@ -10,6 +10,30 @@ router.get('/',
     }
 );
 
+router.get('/reseaux',
+    function(req, res) {
+        console.log(req.session);
+
+        res.render('reseaux', { title: 'Réseaux Informatique', user: req.user });
+    }
+);
+
+router.get('/propos',
+    function(req, res) {
+        console.log(req.session);
+
+        res.render('propos', { title: 'L\'annuaire des ligues' });
+    }
+);
+
+router.get('/equipement',
+    function(req, res) {
+        console.log(req.session);
+
+        res.render('equipement', { title: 'Équipement en matériel informatique des espaces' });
+    }
+);
+
 router.get('/services',
     function(req, res) {
         console.log(req.session);
@@ -25,5 +49,6 @@ router.get('/description',
         res.render('description', { title: 'Description de la M2L', user: req.user });
     }
 );
+
 
 module.exports = router;
