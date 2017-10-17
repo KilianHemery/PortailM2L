@@ -10,4 +10,12 @@ router.get('/',
     }
 );
 
+router.get('/reseaux',
+    function(req, res) {
+        console.log(req.session);
+
+        res.render('reseaux', { title: 'Réseaux Informatique', user: req.user });
+    }
+);
+
 module.exports = router;
