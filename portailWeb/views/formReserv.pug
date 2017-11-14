@@ -1,0 +1,41 @@
+extends layout
+
+block append body
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                h1.display-4.m-b-2 Formulaire
+
+                // register form
+                form(method='POST' action='')
+                    div.form-group
+                        label(for='name') Nom :
+                        input#name.form-control(
+                        type='text', placeholder='nom structure' name='name' required=required)
+                    div.form-group
+                        label(for='email') Email :
+                        input#email.form-control(type='email', placeholder='nom@email.com' name='email')
+                    div.form-group
+                        label(for='tel') Téléphone
+                        input#tel.form-control(type='text', placeholder='Tel' name='tel' required=required)
+                    div.form-group
+                        label(for='dateDebut') Date de début :
+                        input#dateDebut.form-control(type='date', name='dateDeb' required=required)
+                    div.form-group
+                        label(for='dateDeFin') Date de fin :
+                        input#dateDeFin.form-control(type='date',name='dateFin' required=required)
+                    div.form-group
+                        |Salle :
+                        br
+                        select(name="test" size="1" required=required)
+                            option ---------------
+                            option salle 1
+                            option salle 2
+                            option salle 3
+                            option salle 4
+                            option ---------------
+                    br
+                    button.btn.btn-primary(type='submit') Valider
+                    button.btn.btn-primary(type='reset') Annuler
+
+
