@@ -1,0 +1,12 @@
+extends layout
+
+block append body
+    .container.theme-showcase(role='main')
+
+        .jumbotron
+            h1 Visualisation des salles
+
+            p Liste des salles
+                ul
+                    each val in listeSalle.rows
+                        li= val['libelle']
