@@ -15,8 +15,8 @@ var users_model = require('./model/users');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var salles = require('./routes/salles');
-
 var db = require ('./databases/db');
+var reservation = require ('./routes/reservation');
 
 var app = express();
 
@@ -108,7 +108,8 @@ app.use(passport.session());
 // ROUTES
 app.use('/', index);
 app.use('/users', users);
-app.use('/salles',salles)
+app.use('/salles',salles);
+app.use('/reservation',reservation);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
