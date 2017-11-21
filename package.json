@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/MaelleT/PortailM2L/issues"
   },
-  "homepage": "https://github.com/MaelleT/PortailM2L#readme"
+  "homepage": "https://github.com/MaelleT/PortailM2L#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pg": "^7.4.0"
+  }
 }
