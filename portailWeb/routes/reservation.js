@@ -4,13 +4,7 @@ var router = express.Router();
 var reservation_Controller = require('../controllers/reservation_Controller');
 
 
-router.get('/',
-    function(req, res) {
-        console.log(req.session);
-
-        res.render('reservation', { title: 'Formulaire', user: req.user, action:'new' });
-    }
-);
+router.get('/',reservation_Controller.nom_salle);
 
 router.post('/',
     function(req, res) {

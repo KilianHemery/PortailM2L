@@ -36,14 +36,10 @@ block append body
                                 |Salle :
                                 br
                                 select(name="salle" size="1" required=required)
-                                    option ---------------
-                                    option salle 1
-                                    option salle 2
-                                    option salle 3
-                                    option salle 4
-                                    option ---------------
+                                   each row in salles.rows
+                                        option= row['libelle']
                             br
-                            button.btn.btn-primary(type='submit') Valider
+                            button.btn.btn-primary(type='submit', value='valider') Valider
                             button.btn.btn-primary(type='reset') Annuler
                             //button.btn.btn-primary(type='submit') Modifier
 
