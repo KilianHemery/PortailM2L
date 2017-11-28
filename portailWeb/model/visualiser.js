@@ -1,4 +1,5 @@
-class reservation {
+
+class Visualiser {
 
     /** Constructeur*/
     /**
@@ -16,4 +17,4 @@ class reservation {
         return this._libelle;
     }
 }
-module.exports = reservation;
+module.exports = Visualiser;
