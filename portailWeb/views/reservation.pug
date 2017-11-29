@@ -5,9 +5,13 @@ block append body
         .row
             .col-md-6.col-md-offset-3
 
+            if (!user)
+                h3 Connexion obligatoire pour effectuer une réservation /!\
 
+            else
                 if(action=='validation')
                     h1 données bien enregistrées !
+
 
                 else
                     if (action=='new')
@@ -36,15 +40,9 @@ block append body
                                 |Salle :
                                 br
                                 select(name="salle" size="1" required=required)
-                                    option ---------------
-                                    option salle 1
-                                    option salle 2
-                                    option salle 3
-                                    option salle 4
-                                    option ---------------
+                                    each row in salles.rows
+                                        option= row['libelle']
                             br
-                            button.btn.btn-primary(type='submit') Valider
+                            button.btn.btn-primary(type='submit', value='valider') Valider
                             button.btn.btn-primary(type='reset') Annuler
                             //button.btn.btn-primary(type='submit') Modifier
-
-
