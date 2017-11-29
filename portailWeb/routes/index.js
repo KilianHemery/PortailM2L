@@ -42,5 +42,21 @@ router.get('/services',
     }
 );
 
+router.get('/contact',
+    function (req,res) {
+        console.log(req.session);
+
+        res.render('contact', {title: 'Contact', user: req.user });
+    }
+);
+
+router.get('/description',
+    function (req,res) {
+        console.log(req.session);
+
+        res.render('description', {title: 'Description'});
+    }
+);
+
 
 module.exports = router;
