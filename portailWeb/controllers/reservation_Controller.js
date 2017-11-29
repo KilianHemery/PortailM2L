@@ -13,7 +13,7 @@ exports.nom_salle = function (req, res, next)
             console.log(err.stack);
             res.send('ERROR');
         } else {
-            res.render('reservation', {salles : result, action: 'new'});
+            res.render('reservation', {salles : result, action: 'new', user: req.user });
         }
     });
 
