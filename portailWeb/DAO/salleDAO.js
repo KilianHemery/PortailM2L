@@ -8,7 +8,7 @@ class SallePgDAO {
             connectionString: 'postgres://groupe1:groupe1@192.168.222.86:5432/M2L'
         });
 
-        client.connect(function (err) {
+        this._client.connect(function (err) {
             if (err) return done(err);
         });
     }
@@ -34,5 +34,4 @@ class SallePgDAO {
         });
     }
 }
-
-module.exports = salleDAO;
+module.exports = SallePgDAO;

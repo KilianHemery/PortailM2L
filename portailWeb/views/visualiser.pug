@@ -7,6 +7,17 @@ block append body
             h1 Visualisation des salles
 
             p Liste des salles
-                ul
-                    each val in listeSalle.rows
-                        li= val['libelle']
+                table
+                    tr
+                        th Nom de salle
+                        th Capacité
+                        th Catégorie
+                        th Heure d'ouverture
+                        th Heure de fermeture
+                    each val in listeSalles
+                        tr
+                            td = val['libelle']
+                            td = val['capacite']
+                            td = val['libellecat']
+                            td = val['heureouverture']
+                            td = val['heurefermeture']
