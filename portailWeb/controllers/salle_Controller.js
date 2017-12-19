@@ -14,7 +14,7 @@ exports.salle_list = function(req,res,next) {
             console.log(err.stack);
             res.send('ERROR');
         } else {
-            res.render('visualiser', { listeSalle : result });
+            res.render('visualiser', { listeSalle : result, user: req.user  });
         }
     });
 };

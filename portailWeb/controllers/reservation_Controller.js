@@ -1,17 +1,26 @@
-const ReservationPgDAO = require('../model/reservationPgDAO');
-const reservationPgDAO = new ReservationPgDAO();
+var db = require('../databases/db.js')
 
-exports.liste_reservation = function (req, res, next) {
-    reservationPgDAO.insertReservation(
-        function (lesReservations) {
-            res.render('reservation', {listeReservations: lesReservations, action: 'validation'})
-        }
-    );
-};
+exports.nom_salle = function (req, res, next)
+{
+    const reqsql = {
 
-exports.liste_salle = function (req, res, next){
-    reservationPgDAO.selectSalle(function (lesSalles) {
-            res.render('reservation',{listeSalles: lesSalles, action:'new'})
+        name: 'salle',
+        text: 'SELECT libelle FROM salle'
+    };
+
+    db.get().query(reqsql, function (err, result) {
+        if (err) {
+            console.log(err.stack);
+            res.send('ERROR');
+        } else {
+            res.render('reservation', {salles : result, action: 'new'});
         }
-    );
-};
+    });
+
+    //exports.insert_reservation = function (req, res, next) {
+
+        const insert = {
+            name: 'insertion',
+            text: 'INSERT INTO reservation values("dateDeb", "salle", "nom", "email", "tel")'
+        };
+    }

@@ -36,7 +36,7 @@ block append body
                                 |Salle :
                                 br
                                 select(name="salle" size="1" required=required)
-                                   each row in listeSalles
+                                   each row in salles.rows
                                         option= row['libelle']
                             br
                             button.btn.btn-primary(type='submit', value='valider') Valider
