@@ -15,21 +15,9 @@ var users_model = require('./model/users');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var salles = require('./routes/salles');
-var db = require ('./databases/db');
 var reservation = require ('./routes/reservation');
 
 var app = express();
-
-// Connect to Postgres on start
-
-db.connect(
-    (err)=> {
-        if (err) {
-            console.log('Unable to connect to Postgres.');
-            process.exit(1);
-        }
-}
-);
 
 //AUTHENTIFICATION
 

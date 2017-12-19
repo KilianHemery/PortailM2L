@@ -6,14 +6,14 @@ class reservation {
      * @param {int} unid - id de la tache
      * @param {string} unLib  - libelle de la tache
      */
-    constructor(unId, unLib, uneCapacite, uneCategorie) {
+    constructor(unId, unJour, uneSalle, unNom, unEmail, unTel) {
         this._id = unId;
-        this._libelle = unLib;
-        this._capacite = uneCapacite;
-        this._categorie =  uneCategorie;
+        this._jour = unJour;
+        this._salle = uneSalle;
+        this._nom =  unNom;
+        this._email = unEmail;
+        this._tel = unTel;
     }
-    get libelle(){
-        return this._libelle;
-    }
+    
 }
 module.exports = reservation;

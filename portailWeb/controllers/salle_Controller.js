@@ -1,4 +1,4 @@
-var db = require('../databases/db.js')
+var db = require('../model/salleDAO')
 
 //Affichage de toutes les salles
 
