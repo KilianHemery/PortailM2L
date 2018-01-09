@@ -23,4 +23,4 @@ exports.nom_salle = function (req, res, next)
             name: 'insertion',
             text: 'INSERT INTO reservation values("dateDeb", "salle", "nom", "email", "tel")'
         };
-    }
+    };
