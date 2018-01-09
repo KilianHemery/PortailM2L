@@ -17,6 +17,14 @@ body {
   width: auto;
 }
 
-titre {
-  color:red;
+th {
+  background-color: #009def;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: center;
+  color: black;
+  width:175px;
+
 }
