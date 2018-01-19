@@ -54,7 +54,7 @@ router.get('/description',
     function (req,res) {
         console.log(req.session);
 
-        res.render('description', {title: 'Description'});
+        res.render('description', {title: 'Description', user: req.user});
     }
 );
 

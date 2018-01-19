@@ -6,23 +6,24 @@ class ReservationPgDAO {
     constructor() {
         this._client = new Client({
             connectionString: 'postgres://groupe1:groupe1@192.168.222.86:5432/M2L'
-        });
+        });//text: "INSERT INTO reservation VALUES (3, '19/12/2017', 1, 'abdc', 'a@mail', '0123456789')"
 
         this._client.connect(function (err) {
             if (err) return done(err);
         });
     }
 
-    insertReservation(req) {
+    insertReservation(dateDeb, salle, nom,email, tel, dateFin) {
 
         const insert = {
             name: 'insertion',
-            text: "INSERT INTO reservation VALUES (4, '" + req.body.dateDeb + "', 1, '" + req.body.nom + "', '" + req.body.email + "', '" + req.body.tel + "')"
-            //text: "INSERT INTO reservation VALUES (3, '19/12/2017', 1, 'abdc', 'a@mail', '0123456789')"
+            text: "select ajoutReservation('"+dateDeb+"',"+salle+",'"+nom+"','"+email+"','"+tel+"','"+dateFin+"')"
+
         };
 
-        this._client.query(insert, function (err, result) {
+        this._client.query(insert, function (err) {
             if (err) {
+                console.log(nom);
                 console.log(err.stack);
             }
         });
@@ -32,7 +33,7 @@ class ReservationPgDAO {
 
         const salle = {
             name: 'salle',
-            text: 'SELECT libelle FROM salle'
+            text: 'SELECT * FROM salle'
         };
 
         this._client.query(salle, function (err, result) {

@@ -63,4 +63,4 @@ class Categorie {
     }
 }
 
-module.exports = Visualiser;
+module.exports = salle;
