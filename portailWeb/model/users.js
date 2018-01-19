@@ -32,3 +32,18 @@ exports.findByUsername = function(username, callback) {
         return callback(null, null);
     }
 };
+
+
+
+exports.registerUser = function (nom, prenom, adresse,  eMail, telephone, username, passeword, callback) {
+    this.findByUsername(username, function (user) {
+            if (user == null) {
+                AdherentDAO.setNewAdherent(nom,prenom,adresse,eMail,telephone,username,passeword);
+                return callback(true);
+            }
+            else {
+                callback(false)
+            }
+        }
+    );
+};
