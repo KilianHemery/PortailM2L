@@ -52,7 +52,7 @@ passport.use(new Strategy(
 // In order to restore authentication state across HTTP requests, Passport needs
 // to serialize users into and deserialize users out of the session.  The
 // typical implementation of this is as simple as supplying the user ID when
-// serializing, and querying the user record by ID from the database when
+// serializing, and querying the user record by ID from the databases when
 // deserializing.
 passport.serializeUser(
     function(user, callback) {
@@ -77,6 +77,9 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+app.use(express.static('public'));
+app.use('/static', express.static(__dirname + '/public'));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

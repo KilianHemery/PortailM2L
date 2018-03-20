@@ -13,12 +13,13 @@ class ReservationPgDAO {
         });
     }
 
-    insertReservation(dateDeb, salle, nom,email, tel, dateFin) {
+    insertReservation(dateDeb, salle, nom, email, tel, dateFin) {
 
-        const insert = {
+        let insert = {
             name: 'insertion',
-            text: "select ajoutReservation('"+dateDeb+"',"+salle+",'"+nom+"','"+email+"','"+tel+"','"+dateFin+"')"
-
+            //text: "select ajoutReservation('"$1"',"$2",'"$3"','"$4"','"$5"','"$6"')"
+            text: "INSERT INTO reservation ( datedebut, unesalle, nom, email, tel, datefin) VALUES ($1,$2,$3,$4,$5,$6)",
+            values: [dateDeb, salle, nom, email, tel, dateFin]
         };
 
         this._client.query(insert, function (err) {

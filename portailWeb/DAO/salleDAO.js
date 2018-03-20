@@ -16,8 +16,8 @@ class SallePgDAO {
     selectSalles(displaycb)
     {
         const lesSalles = {
-            name: 'les salles',
-            text: 'SELECT * from salle'
+            name: 'affichage-toutes-salles',
+            text: 'SELECT salle.libelle, capacite, libellecat, concat(heureouverture ,\'H\', minutesouvertures) as "heureouverture", concat(heurefermeture ,\'H\',minutesfermetures) as "heurefermeture" FROM salle INNER JOIN categorie ON salle.unecategorie = categorie.id'
         };
 
         this._client.query(lesSalles, function (err, result) {

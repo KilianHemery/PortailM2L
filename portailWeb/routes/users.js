@@ -12,5 +12,11 @@ router.post('/login',passport.authenticate('local', { failureRedirect: '/users/l
 router.get('/logout',auth_controller.logout);
 
 
+
+//??
+//router.get('/login', auth_controller.login_Verification);
+
+//router.post('/login',auth_controller.login_Verification());
+
 module.exports = router;
 
