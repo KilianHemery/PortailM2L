@@ -7,34 +7,17 @@ block append body
             h1 Visualisation des salles
 
             p Liste des salles
-                    table
+                table
+                    tr
+                        th Nom de salle
+                        th Capacité
+                        th Categorie
+                        th Heure d'ouverture
+                        th Heure de fermeture
+                    each val in listeSalles
                         tr
-                            th Nom de salle
-                            th Capacité
-                            th Categorie
-                            th Heure d'ouverture
-                            th Heure de fermeture
-                        each val in listeSalles.rows
-                            tr
-                                td= val['libelle']
-                                td= val['capacite']
-                                td= val['libellecat']
-                                td= val['heureouverture']
-                                td= val['heurefermeture']
-
-            //p Définition des catégories
-                    table
-                        tr
-                            th Nom de categories
-                            th Heure d'ouverture
-                            th Heure de fermeture
-                            th Minutes d'ouvertures
-                            th Minute de fermeture
-                        each val in listeCategorie.rows
-                            tr
-                                td= val['libellecat']
-                                td= val['heureouverture']
-                                td= val['heurefermeture']
-                                td= val['minutesouvertures']
-                                td= val['minutesfermetures']
-
+                            td= val['libelle']
+                            td= val['capacite']
+                            td= val['libellecat']
+                            td= val['heureouverture']
+                            td= val['heurefermeture']

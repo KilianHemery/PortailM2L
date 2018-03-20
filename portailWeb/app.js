@@ -15,21 +15,9 @@ var users_model = require('./model/users');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var salles = require('./routes/salles');
-var db = require ('./databases/db');
 var reservation = require ('./routes/reservation');
 
 var app = express();
-
-// Connect to Postgres on start
-
-db.connect(
-    (err)=> {
-        if (err) {
-            console.log('Unable to connect to Postgres.');
-            process.exit(1);
-        }
-}
-);
 
 //AUTHENTIFICATION
 
@@ -64,7 +52,7 @@ passport.use(new Strategy(
 // In order to restore authentication state across HTTP requests, Passport needs
 // to serialize users into and deserialize users out of the session.  The
 // typical implementation of this is as simple as supplying the user ID when
-// serializing, and querying the user record by ID from the database when
+// serializing, and querying the user record by ID from the databases when
 // deserializing.
 passport.serializeUser(
     function(user, callback) {
