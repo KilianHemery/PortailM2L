@@ -1,4 +1,3 @@
-var db = require('../databases/db.js')
 
 // LOGIN
 exports.login_form = function(req, res) { // attention à la route / depuis le /login
@@ -38,5 +37,7 @@ exports.login_Verification = function (req,res) {
     });
 
 };
+
+
 
 
