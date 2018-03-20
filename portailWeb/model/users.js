@@ -1,49 +1,46 @@
+const userDAO = require('../DAO/userDAO');
+const UserDAO = new userDAO();
+
+/*
 var records = [
     { id: 1, username: 'jack', password: 'secret'}
   , { id: 2, username: 'jill', password: 'birthday'}
 ];
-
+*/
 
 // Research function by id
 exports.findById = function(id,callback) {
-    find = false;
-    records.forEach(function(record) {
-        if (record.id == id) {
-            find = true;
-            return callback(null, record);
+    UserDAO.getListUsers(function (listUsers){
+        if(listUsers != null) {
+            listUsers.forEach(function (user) {
+                if (user.id === id) {
+                    callback(null, user);
+                }
+            });
+        } else {
+            callback(null, null);
         }
     });
-    if (!(find)){
-        return callback(new Error('User ' + id + ' does not exist'))}
- };
+};
 
 // Research function by Username
-exports.findByUsername = function(username, callback) {
-    var find = false;
-    for (var i = 0, len = records.length; i < len; i++) {
-      var record = records[i];
-      if (record.username === username) {
-          find=true;
-          return callback(null, record);
-      }
-    }
-
-    if (!(find)) {
-        return callback(null, null);
-    }
-};
-
-
-
-exports.registerUser = function (nom, prenom, adresse,  eMail, telephone, username, passeword, callback) {
-    this.findByUsername(username, function (user) {
-            if (user == null) {
-                AdherentDAO.setNewAdherent(nom,prenom,adresse,eMail,telephone,username,passeword);
-                return callback(true);
+exports.findByUsername = function(username, user) {
+    UserDAO.getListUsers(function (listUsers){
+        find = false;
+        if(listUsers != null) {
+            listUsers.forEach(function (User) {
+                if (User.username === username) {
+                    find= true;
+                    user(null, User);
+                }
+            });
+            if (!find){
+                user(null,null);
             }
-            else {
-                callback(false)
-            }
+        } else {
+            user(null, null);
         }
-    );
+    });
 };
+
+
