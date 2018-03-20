@@ -1,4 +1,3 @@
-
 class salle {
 
     /** Constructeur*/
@@ -63,4 +62,4 @@ class Categorie {
     }
 }
 
-module.exports = Visualiser;
+module.exports = salle;
