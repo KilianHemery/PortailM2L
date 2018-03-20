@@ -22,5 +22,6 @@ exports.nom_salle = function (req, res, next)
         const insert = {
             name: 'insertion',
             text: 'INSERT INTO reservation values("dateDeb", "salle", "nom", "email", "tel")'
-        };
-    }
+        }
+    };
+
